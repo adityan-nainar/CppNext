@@ -1,0 +1,93 @@
+//============================================================================
+// Name        : inheritance.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <string>
+using namespace std;
+/*
+class person{
+	public:
+		int age;
+		string fullName;
+		string phoneNumber;
+};
+
+class Student : public person {
+
+    public:
+        int studentId;
+        string schoolName;
+
+        void study() {
+            cout << "Studying" << endl;
+        }
+};
+
+class Employee : public person {
+
+    public:
+        int employeeId;
+        string companyName;
+
+        void work() {
+            cout << "Working" << endl;
+        }
+};
+
+*/
+
+class Person {
+
+    private:
+        string phoneNumber;
+
+    public:
+        string fullName;
+
+        void setPhoneNumber(string phoneNumber) {
+            this->phoneNumber = phoneNumber;
+        }
+};
+
+class Employee : public Person {
+
+    private:
+        float salary;
+
+    protected:
+
+    public:
+        int id;
+        void addBonus(float bonus) {
+            this->salary = this->salary + bonus;
+        }
+
+        void setSalary(float salary) {
+            this->salary = salary;
+        }
+
+        void displaySalary() {
+            cout << "Current salary: " << salary;
+        }
+};
+
+
+int main() {
+
+    Employee employee;
+    employee.id = 1;
+    employee.fullName = "Aditya Sharma";
+    employee.setPhoneNumber("+91-887700132");
+    employee.setSalary(35000);
+    employee.addBonus(4000);
+    employee.displaySalary();
+
+
+    return 0;
+}
+
