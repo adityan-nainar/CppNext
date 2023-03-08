@@ -1,0 +1,56 @@
+//============================================================================
+// Name        : classes.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include<string>
+using namespace std;
+
+class dog{
+
+	public:
+		int age;
+		string color;
+		string breed;
+		string name;
+
+		string printname(){
+			cout<<age<<endl<<color<<endl<<breed<<endl;
+			return "name is: "+ name;
+		}
+
+		dog(){
+			cout<<"object created"<<endl;
+		}
+
+		dog(int age, string name){
+			this->age=age;
+			this->name=name;
+		}
+
+		~dog(){
+
+		}
+
+};
+
+
+int main(){
+	dog d1;
+	d1.age = 12;
+	d1.breed="Idk";
+	d1.color = "Black";
+	d1.name = "Hehe";
+
+	cout<<d1.printname();
+
+	dog d2(9, "fluffy");
+	cout<<d2.name;
+
+	return 0;
+}
+
